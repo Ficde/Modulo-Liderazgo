@@ -514,7 +514,7 @@ const modules = {
             validation: (raw) => {
                 const v = normalizar(raw);
                 let c = 0;
-                if (v.includes('conducta') || v.includes('comportamiento')) c++;
+                if (v.includes('conductas') || v.includes('comportamiento')) c++;
                 if (v.includes('cultura') || v.includes('valores') || v.includes('emocion') || v.includes('herencia') || v.includes('ambiente')) c++;
                 return c >= 2;
             },
@@ -588,7 +588,7 @@ const modules = {
                     v.includes('intrin') &&
                     (v.includes('interes') || v.includes('placer') || v.includes('satisfaccion')) &&
                     v.includes('extrin') &&
-                    (v.includes('recompensa') || v.includes('castigo') || v.includes('extern'))
+                    (v.includes('recompen') || v.includes('castigo') || v.includes('extern'))
                 );
             },
             tutor: 'Pensá si el impulso nace de uno mismo o de recompensas y castigos externos.',
@@ -617,9 +617,9 @@ const modules = {
             validation: (raw) => {
                 const v = normalizar(raw);
                 return (
-                    v.includes('necesidad') &&
+                    v.includes('motivacional') &&
                     v.includes('tension') &&
-                    (v.includes('equilibrio') || v.includes('satisface') || v.includes('satisfaccion'))
+                    (v.includes('equilibrio') || v.includes('satisface') || v.includes('restable'))
                 );
             },
             tutor: 'Todo comienza con una necesidad que rompe el equilibrio y termina al satisfacerla.',
@@ -646,12 +646,12 @@ const modules = {
             validation: (raw) => {
                 const v = normalizar(raw);
                 return (
-                    v.includes('esfuerzo') ||
+                    v.includes('sastifa') ||
                     v.includes('superar') ||
                     v.includes('obstaculo') ||
                     v.includes('objetivo') ||
                     v.includes('desempeno') ||
-                    v.includes('satisfaccion')
+                    v.includes('sosteni')
                 );
             },
             tutor: 'Relacioná motivación con esfuerzo sostenido, superación y metas.',
@@ -669,9 +669,9 @@ const modules = {
             validation: (raw) => {
                 const v = normalizar(raw);
                 return (
-                    v.includes('no es casual') ||
-                    (v.includes('causa') && (v.includes('motivo') || v.includes('motiv') || v.includes('estimulo'))) &&
-                    (v.includes('objetivo') || v.includes('meta') || v.includes('fin'))
+                    v.includes('alca') ||
+                    (v.includes('causa') && (v.includes('motiv') || v.includes('nece') || v.includes('extern'))) &&
+                    (v.includes('objeti') || v.includes('meta') || v.includes('fin'))
                 );
             },
             tutor: 'Pensá en necesidades o deseos que impulsan conductas hacia metas.',
@@ -713,10 +713,10 @@ const modules = {
             validation: (raw) => {
                 const v = normalizar(raw);
                 return (
-                    v.includes('necesidad') &&
+                    v.includes('recupe') &&
                     v.includes('tension') &&
-                    (v.includes('conducta') || v.includes('accion')) &&
-                    (v.includes('meta') || v.includes('objetivo') || v.includes('equilibrio'))
+                    (v.includes('movili') || v.includes('accion')) &&
+                    (v.includes('apar') || v.includes('neces') || v.includes('equilibri'))
                 );
             },
             tutor: 'Pensá qué pasa cuando algo falta y se busca restablecer el equilibrio.',
@@ -776,9 +776,9 @@ const modules = {
             validation: (raw) => {
                 const v = normalizar(raw);
                 return (
-                    v.includes('frustracion') ||
-                    v.includes('tension') ||
-                    v.includes('desequilibrio') ||
+                    v.includes('frustraci') ||
+                    v.includes('tens') ||
+                    v.includes('conduc') ||
                     v.includes('compensacion')
                 );
             },
@@ -806,12 +806,12 @@ const modules = {
             validation: (raw) => {
                 const v = normalizar(raw);
                 return (
-                    v.includes('esfuerzo') ||
-                    v.includes('superar') ||
+                    v.includes('esfuer') ||
+                    v.includes('supera') ||
                     v.includes('obstaculo') ||
-                    v.includes('persistencia') ||
-                    v.includes('objetivo') ||
-                    v.includes('meta')
+                    v.includes('persis') ||
+                    v.includes('objetiv') ||
+                    v.includes('laboral')
                 );
             },
             tutor: 'Pensá qué te permite seguir adelante cuando aparecen problemas.',
@@ -829,9 +829,9 @@ const modules = {
             validation: (raw) => {
                 const v = normalizar(raw);
                 return (
-                    v.includes('necesidad') &&
-                    (v.includes('seguridad') || v.includes('reconocimiento') || v.includes('pertenencia')) &&
-                    (v.includes('desmotiv') || v.includes('apatia') || v.includes('bajo compromiso'))
+                    v.includes('neces') &&
+                    (v.includes('seguridad') || v.includes('reconocim') || v.includes('sastifa')) &&
+                    (v.includes('desmotiv') || v.includes('baj') || v.includes('grup'))
                 );
             },
             tutor: 'Pensá en alguien que siente inseguridad o falta de reconocimiento dentro del grupo.',
@@ -858,8 +858,8 @@ const modules = {
             validation: (raw) => {
                 const v = normalizar(raw);
                 return (
-                    v.includes('no hay objetivo') ||
-                    v.includes('sin objetivo comun') ||
+                    v.includes('objetiv') ||
+                    v.includes('interacc') ||
                     v.includes('desorganiza') ||
                     v.includes('cooperacion') ||
                     v.includes('pertenencia')
@@ -891,11 +891,11 @@ const modules = {
             validation: (raw) => {
                 const v = normalizar(raw);
                 return (
-                    v.includes('pertenencia') ||
-                    v.includes('aceptacion') ||
+                    v.includes('socia') ||
+                    v.includes('aceptac') ||
                     v.includes('apoyo') ||
-                    v.includes('reconocimiento') ||
-                    v.includes('relaciones')
+                    v.includes('reconocim') ||
+                    v.includes('relacion')
                 );
             },
             tutor: 'Pensá en la necesidad de afiliación, apoyo y reconocimiento social.',
@@ -923,8 +923,8 @@ const modules = {
                 const v = normalizar(raw);
                 return (
                     v.includes('cohesion') &&
-                    (v.includes('apoyo') || v.includes('union') || v.includes('normas')) &&
-                    (v.includes('objetivo') || v.includes('productividad') || v.includes('conflicto'))
+                    (v.includes('apoy') || v.includes('grup') || v.includes('normas')) &&
+                    (v.includes('objetiv') || v.includes('product') || v.includes('conflict'))
                 );
             },
             tutor: 'Pensá en un grupo unido que comparte normas y se apoya mutuamente.',
@@ -953,8 +953,8 @@ const modules = {
             validation: (raw) => {
                 const v = normalizar(raw);
                 return (
-                    v.includes('conflicto') &&
-                    (v.includes('mejora') || v.includes('cambio') || v.includes('productividad') || v.includes('decisiones'))
+                    v.includes('conflict') &&
+                    (v.includes('mejora') || v.includes('cambi') || v.includes('product') || v.includes('decisio'))
                 );
             },
             tutor: 'Pensá cuando un desacuerdo genera debate y mejora.',
@@ -1000,11 +1000,11 @@ const modules = {
             validation: (raw) => {
                 const v = normalizar(raw);
                 return (
-                    v.includes('observar') ||
-                    v.includes('escucha') ||
+                    v.includes('integrant') ||
+                    v.includes('cerca') ||
                     v.includes('comunicacion') ||
-                    v.includes('dialogo') ||
-                    v.includes('preguntar')
+                    v.includes('conduc') ||
+                    v.includes('lid')
                 );
             },
             tutor: 'Escuchar y observar también es liderar.',
@@ -1015,7 +1015,7 @@ const modules = {
             badge: 'Cohesión',
             title: 'Cohesión y liderazgo',
             instruction: 'Completá las frases sobre cohesión grupal.<br>La cohesión es la fuerza que mantiene ______ a los miembros del grupo<br>Un grupo cohesivo favorece el cumplimiento de las ______<br>El liderazgo influye en la ______ del grupo',
-            blanks: ['unidos', 'metas', 'motivación'],
+            blanks: ['unidos', 'grup', 'motivaci'],
             tutor: 'Pensá en unión, logros compartidos e impulso para actuar.',
             explanation: 'La cohesión mantiene unidos a los miembros, favorece el cumplimiento de metas y el liderazgo influye en la motivación del grupo.'
         },
@@ -1041,10 +1041,10 @@ const modules = {
                 const v = normalizar(raw);
                 return (
                     v.includes('dialog') ||
-                    v.includes('convers') ||
+                    v.includes('desmotiv') ||
                     v.includes('apoyo') ||
-                    v.includes('reasignar') ||
-                    v.includes('reconocer')
+                    v.includes('reconoc') ||
+                    v.includes('comprom')
                 );
             },
             tutor: 'Una conversación y un reconocimiento oportuno pueden cambiar mucho.',
@@ -1074,7 +1074,7 @@ const modules = {
                 const v = normalizar(raw);
                 return (
                     v.includes('rol') &&
-                    (v.includes('organizacion') || v.includes('funcionamiento') || v.includes('conflicto') || v.includes('expectativa'))
+                    (v.includes('organiz') || v.includes('funcionamiento') || v.includes('conflict') || v.includes('integrant'))
                 );
             },
             tutor: 'Cada persona cumple una función en el equipo.',
@@ -1101,11 +1101,11 @@ const modules = {
             validation: (raw) => {
                 const v = normalizar(raw);
                 return (
-                    v.includes('mediar') ||
-                    v.includes('mediacion') ||
+                    v.includes('grup') ||
+                    v.includes('reduc') ||
                     v.includes('dialogo') ||
-                    v.includes('acuerdo') ||
-                    v.includes('resolver')
+                    v.includes('mediad') ||
+                    v.includes('soluc')
                 );
             },
             tutor: 'El líder facilita el diálogo para que el conflicto no bloquee al grupo.',
